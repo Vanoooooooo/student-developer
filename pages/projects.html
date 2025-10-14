@@ -7,12 +7,13 @@
     <title>Главная - Проекты</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body class="bg-light">
     <div class="container-fluid p-0">
         <!-- Header -->
-        <header class="bg-primary text-white py-4">
+        <header class="bg-dark text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col">
@@ -20,14 +21,14 @@
                         <p class="mb-0 opacity-75">Студент немножечко разработчик</p>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-18-24</span>
+                        <span class="badge bg-light text-black">ЭФБО-18-24</span>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/diary.html">
-                                <i class="bi bi-bookmark-check-fill me-1"></i>Дневник
+                                <i class="bi bi-bookmark-check me-1"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
@@ -62,71 +63,110 @@
         <main class="container my-4">
             <!-- Projects Section -->
             <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h3 class="card-title h4 mb-0">
-                            Мои проекты
-                        </h3>
+
+                <div class="row mb-4">
+                    <div class="col">
+                        <h1 class="display-7 fw-bold text">Мои проекты</h1>
                     </div>
-                    <div class="card-body">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <img src="../images/project1.png" class="card-img-top" alt="Личный сайт"
-                                        style="height: 250px; object-fit: cover;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Личный сайт</h5>
-                                        <p class="card-text small text-muted">
-                                            Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
-                                        </p>
-                                        <div class="mb-2">
-                                            <span class="badge bg-primary">HTML</span>
-                                            <span class="badge bg-primary">CSS</span>
-                                            <span class="badge bg-primary">Bootstrap</span>
-                                        </div>
-                                    </div>
+                </div>
+
+
+                <section class="mb-4">
+                    <div class="col-md-offset-4">
+                        <div class="btn-group" role="group">
+                            <input type="checkbox" class="btn-check" id="html-btn" autocomplete="off" data-tech="html">
+                            <label class="btn btn-outline-dark" for="html-btn">HTML</label>
+
+                            <input type="checkbox" class="btn-check" id="css-btn" autocomplete="off" data-tech="css">
+                            <label class="btn btn-outline-dark" for="css-btn">CSS</label>
+
+                            <input type="checkbox" class="btn-check" id="bootstrap-btn" autocomplete="off"
+                                data-tech="bootstrap">
+                            <label class="btn btn-outline-dark" for="bootstrap-btn">Bootstrap</label>
+
+                            <input type="checkbox" class="btn-check" id="js-btn" autocomplete="off"
+                                data-tech="javascript">
+                            <label class="btn btn-outline-dark" for="js-btn">JavaScript</label>
+
+                            <input type="checkbox" class="btn-check" id="storage-btn" autocomplete="off"
+                                data-tech="localstorage">
+                            <label class="btn btn-outline-dark" for="storage-btn">LocalStorage</label>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <div class="row g-3" id="projects-container">
+                    <!-- Первый проект -->
+                    <div class="col-md-6 project-card" data-tech="html css bootstrap" data-project-id="project1">
+                        <div class="card h-100">
+                            <img src="../images/project1.png" class="card-img-top" alt="Личный сайт"
+                                style="height: 300px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Личный сайт</h5>
+                                <p class="card-text small text-muted">
+                                    Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-primary">HTML</span>
+                                    <span class="badge bg-primary">CSS</span>
+                                    <span class="badge bg-primary">Bootstrap</span>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <img src="../images/project2.jpg" class="card-img-top" alt="Todo приложение"
-                                        style="height: 250px; object-fit: cover;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Проект находится в разработке</h5>
+                        </div>
+                    </div>
+
+                    <!-- Второй проект -->
+                    <div class="col-md-6 project-card" data-tech="javascript localstorage" data-project-id="project2">
+                        <div class="card h-100">
+                            <img src="../images/project2_2.jpg" class="card-img-top" alt="Todo приложение"
+                                style="height: 300px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Проект находится в разработке</h5>
                                         <p class="card-text small text-muted">
-                                            Приложение для управления задачами с использованием JavaScript.
+                                            Еще, пока что, не придумал. Как придумаю, сделаю. Может быть сделаю.
                                         </p>
-                                        <div class="mb-2">
-                                            <span class="badge bg-success">JavaScript</span>
-                                            <span class="badge bg-success">LocalStorage</span>
-                                        </div>
-                                    </div>
+                                <div class="mb-2">
+                                    <span class="badge bg-success">JavaScript</span>
+                                    <span class="badge bg-success">LocalStorage</span>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <img src="../images/project3.jpg" class="card-img-top" alt="Интернет-магазин"
-                                        style="height: 250px; object-fit: cover;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Скоро здесь будет коммунизм</h5>
-                                        <p class="card-text small text-muted">
-                                            Прототип лучшего мира для народа!. (*шуточный лозунг)
-                                        </p>
-                                        <div class="mb-2">
-                                            <span class="badge bg-info">Lenin</span>
-                                            <span class="badge bg-info">Karl Marks</span>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Третий проект -->
+                    <div class="col-md-6 project-card" data-tech="html css javascript" data-project-id="project3">
+                        <div class="card h-100">
+                            <img src="../images/project3.jpg" class="card-img-top" alt="Коммунизм"
+                                style="height: 300px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Правильные промты в DeepSeek</h5>
+                                <p class="card-text small text-muted">
+                                    Проект c обучением написания правильных промтов для программирования (сам таким не
+                                    промышляю).
+                                </p>
+                                <div class="mb-2">
+                                    <span class="badge bg-info">HTML</span>
+                                    <span class="badge bg-info">CSS</span>
+                                    <span class="badge bg-info">JavaScript</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="no-projects-message" class="text-center mt-4 hidden">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Проекты по выбранным технологиям не найдены
+                    </div>
+                </div>
+
             </section>
         </main>
 
         <!-- Footer -->
-        <footer class="bg-dark text-white py-4 mt-5">
+        <footer class="bg-black text-white py-4 mt-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -136,11 +176,79 @@
                         <a href="../pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
                     </div>
                 </div>
-            </div>
         </footer>
     </div>
 
+
+
+
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Название проекта</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Карусель изображений -->
+                    <div id="projectCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-indicators" id="projectCarouselIndicators">
+                            <!-- Индикаторы будут добавлены через JavaScript -->
+                        </div>
+                        <div class="carousel-inner rounded" id="projectCarouselInner">
+                            <!-- Слайды будут добавлены через JavaScript -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+
+                    <!-- Описание проекта -->
+                    <div class="mb-3">
+                        <h6>Описание проекта</h6>
+                        <p id="projectDescription" class="text-muted" style="white-space: pre-line;"></p>
+                    </div>
+
+                    <!-- Технологии -->
+                    <div class="mb-3">
+                        <h6>Использованные технологии</h6>
+                        <div id="projectTechnologies">
+                            <!-- Бейджи технологий будут добавлены через JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Ссылки -->
+                    <div class="project-links">
+                        <h6>Ссылки</h6>
+                        <div class="d-flex gap-2">
+                            <a href="#" id="liveDemoLink" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="bi bi-eye me-1"></i>Живая версия
+                            </a>
+                            <a href="#" id="sourceCodeLink" class="btn btn-outline-secondary btn-sm" target="_blank">
+                                <i class="bi bi-github me-1"></i>Исходный код
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/filters.js"></script>
+    <script src="../scripts/modal.js"></script>
+
 </body>
 
 </html>

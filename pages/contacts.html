@@ -12,7 +12,7 @@
 <body class="bg-light">
     <div class="container-fluid p-0">
         <!-- Header -->
-        <header class="bg-primary text-white py-4">
+        <header class="bg-dark text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col">
@@ -20,14 +20,14 @@
                         <p class="mb-0 opacity-75">Студент немножечко разработчик</p>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-18-24</span>
+                        <span class="badge bg-light text-black">ЭФБО-18-24</span>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/diary.html">
-                                <i class="bi bi-bookmark-check-fill me-1"></i>Дневник
+                                <i class="bi bi-bookmark-check me-1"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
@@ -60,148 +60,114 @@
         </nav>
 
         <main class="container my-4">
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h1 text-primary">Контакты для связи</h2>
-                    </div>
-                    <div class="card-body p-4">
-                        <div>
-                            <h3>Электронная почта:</h3>
-                            <p>nenadopj@gmail.com</p>
-                        </div>
-                        <div>
-                            <h3>Адрес:</h3>
-                            <p>г. Москва, ул. Яблочкова, 5 стр. 5</p>
-                        </div>
-                        <div>
-                            <button class="contact-button" onclick="contactModal.showModal()">Связаться с
-                                нами</button>
-
-                        </div>
-                    </div>
-                </div>
-    </div>
-
-    </section>
-
-    <dialog id="contactModal">
-        <div class="modal-header">
-            <h2>Форма обратной связи</h2>
-        </div>
-
-        <div class="modal-content">
-            <form id="feedbackForm" method="dialog">
-                <div class="form-group">
-                    <label for="name">Имя <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Телефон <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Электронная почта <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-                </div>
-
-                <div class="form-group">
-                    <label for="category">Категория обращения <span class="required">*</span></label>
-                    <select id="category" name="category" required>
-                        <option value="">Выберите категорию</option>
-                        <option value="technical">Техническая поддержка</option>
-                        <option value="commercial">Коммерческое предложение</option>
-                        <option value="cooperation">Сотрудничество</option>
-                        <option value="complaint">Жалоба</option>
-                        <option value="suggestion">Предложение</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Текст обращения <span class="required">*</span></label>
-                    <textarea id="message" name="message" required
-                        placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                </div>
-
-                <div class="modal-actions">
-                    <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
-                    <button type="submit" class="btn btn-secondary">Отмена</button>
-                    <!-- Кнопка отправки с обработкой через JavaScript -->
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-                </div>
-            </form>
-        </div>
-    </dialog>
-
-    <script>
-        // Функция для отправки формы
-        function submitForm() {
-            const form = document.getElementById('feedbackForm');
-            const formData = new FormData(form);
-
-            // Простая валидация
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Собираем данные формы
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                message: formData.get('message')
-            };
-
-            // В реальном приложении здесь был бы AJAX-запрос
-            console.log('Данные формы:', data);
-
-            // Показываем уведомление об успешной отправке
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
-            // Закрываем модальное окно
-            contactModal.close();
-
-            // Очищаем форму
-            form.reset();
-        }
-
-        // Закрытие модального окна по клику на фон
-        document.getElementById('contactModal').addEventListener('click', function (event) {
-            if (event.target === this) {
-                this.close();
-            }
-        });
-
-        // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
-        document.getElementById('feedbackForm').addEventListener('keypress', function (event) {
-            if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                event.preventDefault();
-            }
-        });
-    </script>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 OOO"БНАЛ". Все права защищены.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="../pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 class="display-7 fw-bold text">Свяжитесь со мной</h1>
                 </div>
             </div>
-        </div>
-    </footer>
+            <div class="row">
+                <div class="col">
+
+                    <form id="feedbackForm">
+                        <div class="col g-3">
+                            <div class="col-md-11">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label fw-semibold">
+                                        Имя <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя"
+                                        class="form-control form-control-lg">
+                                    <div class="invalid-feedback" id="nameError">
+                                        Пожалуйста, введите ваше имя
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-semibold">
+                                        Электронная почта <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="example@mail.ru"
+                                        class="form-control form-control-lg">
+                                    <div class="invalid-feedback" id="emailError">
+                                        Пожалуйста, введите корректный email адрес
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="mb-3">
+                                    <label for="message" class="form-label fw-semibold">
+                                        Сообщение <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea id="message" name="message" required
+                                        placeholder="Опишите вашу проблему или вопрос..."
+                                        class="form-control form-control-lg" rows="5"></textarea>
+                                    <div class="invalid-feedback" id="messageError">
+                                        Пожалуйста, введите текст обращения
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-dark btn-lg px-4" id="submitBtn"
+                                        onclick="submitForm()">
+                                        <i class="bi bi-send me-2"></i>Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-11 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-envelope text-black display-6 mb-3"></i>
+                                <h5 class="card-title">Email</h5>
+                                <p class="card-text text-muted">kurdenkov.i.v@edu.mirea.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-github text-black display-6 mb-3"></i>
+                                <h5 class="card-title">GitHub</h5>
+                                <p class="card-text text-muted">Vanooooooooo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-geo-alt text-black display-6 mb-3"></i>
+                                <h5 class="card-title">Адрес</h5>
+                                <p class="card-text text-muted">Россия, г. Москва</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 OOO"БНАЛ". Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="../pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                    </div>
+                </div>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/form-validation.js"></script>
 </body>
 
 </html>
